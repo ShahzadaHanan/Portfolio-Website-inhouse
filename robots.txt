@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-website-7a566.web.app/sitemap.xml

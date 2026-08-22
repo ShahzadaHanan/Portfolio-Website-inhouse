@@ -1,0 +1,97 @@
+/* ==========================================================================
+   THEME TOKENS
+   Dark is the default "workshop" theme; light is the "blueprint paper" theme.
+   Everything downstream reads only these variables — never hard-coded colors.
+   ========================================================================== */
+
+:root {
+  /* ---- surfaces ---- */
+  --bg: #0b0f17;
+  --bg-elevated: #0e131d;
+  --surface: #121826;
+  --surface-2: #1a2130;
+  --border: #a0a2a5;
+  --border-strong: #2f3a4f;
+
+  /* ---- text ---- */
+  --text: #edeff3;
+  --text-muted: #8b93a3;
+  --text-faint: #565f70;
+
+  /* ---- accents ---- */
+  --accent: #f5a623;
+  /* amber — primary signal */
+  --accent-soft: #f5a62322;
+  --accent-2: #4fd1c5;
+  /* teal — secondary signal */
+  --accent-2-soft: #4fd1c522;
+  --accent-contrast: #0b0f17;
+
+  /* ---- feedback ---- */
+  --danger: #e5624d;
+
+  /* ---- grid / blueprint texture ---- */
+  --grid-line: #ffffff09;
+  --grid-line-strong: #f5a62314;
+
+  /* ---- shadow ---- */
+  --shadow-sm: 0 1px 2px #00000040;
+  --shadow-md: 0 8px 24px -8px #000000a0;
+  --shadow-lg: 0 24px 48px -16px #000000b0;
+
+  /* ---- type ---- */
+  --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 720ms;
+
+  color-scheme: dark;
+}
+
+/* Light theme — "blueprint paper": warm paper ground, ink text, same accents
+   darkened slightly for AA contrast. */
+:root[data-theme="light"] {
+  --bg: #f7f5ef;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f0ede2;
+  --border: #afab9f;
+  --border-strong: #d2cbb8;
+
+  --text: #14171c;
+  --text-muted: #5b6270;
+  --text-faint: #8a90a0;
+
+  --accent: #c97a15;
+  --accent-soft: #c97a1518;
+  --accent-2: #128077;
+  --accent-2-soft: #12807718;
+  --accent-contrast: #ffffff;
+
+  --danger: #c93f2b;
+
+  --grid-line: #00000009;
+  --grid-line-strong: #c97a1516;
+
+  --shadow-sm: 0 1px 2px #00000014;
+  --shadow-md: 0 8px 24px -8px #00000022;
+  --shadow-lg: 0 24px 48px -16px #00000030;
+
+  color-scheme: light;
+}
+
+/* Applied briefly on toggle so color transitions feel intentional, not jarring */
+.theme-transition,
+.theme-transition * {
+  transition: background-color var(--dur-base) var(--ease-in-out),
+    border-color var(--dur-base) var(--ease-in-out),
+    color var(--dur-base) var(--ease-in-out),
+    fill var(--dur-base) var(--ease-in-out),
+    stroke var(--dur-base) var(--ease-in-out) !important;
+}
